@@ -4,6 +4,7 @@ import { connectDB, disconnectDB} from "./config/db.js";
 
 //Import routes
 import groupsRoutes from "./routes/groupsRoutes.js"
+import authRoutes from "./routes/authRoutes.js"
 
 config();
 connectDB();
@@ -12,6 +13,7 @@ const app = express()
 
 // API Routes
 app.use('/groups', groupsRoutes)
+app.use('/auth', authRoutes)
 
 app.get('/', (req, res) => {
     res.json({message: "Welcome to the Home Page"})
